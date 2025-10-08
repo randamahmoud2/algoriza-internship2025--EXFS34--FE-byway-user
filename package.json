@@ -1,12 +1,15 @@
 {
   "name": "byway-learning",
+  "homepage": "https://randamahmoud2.github.io/Byway_User",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
     "typescript": "~5.9.3",
@@ -21,6 +24,7 @@
     "autoprefixer": "^10.4.21",
     "axios": "^1.12.2",
     "framer-motion": "^12.23.22",
+    "gh-pages": "^6.3.0",
     "jotai": "^2.15.0",
     "lucide-react": "^0.544.0",
     "postcss": "^8.5.6",
