@@ -7,6 +7,6 @@ export default defineConfig({
   server: {
     port: 3000,
   },
-base:"Byway_User"
+base:"Byway_Useralgoriza-internship2025--EXFS34--FE-byway-use"
 
 })
