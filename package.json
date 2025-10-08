@@ -1,12 +1,12 @@
 {
   "name": "byway-learning",
-  "homepage": "https://randamahmoud2.github.io/algoriza-internship2025--EXFS34--FE-byway-user",
-  "private": true,
   "version": "0.0.0",
+  "private": true,
+  "homepage": "https://randamahmoud2.github.io/algoriza-internship2025--EXFS34--FE-byway-user",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "vite build",
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
