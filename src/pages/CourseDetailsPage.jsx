@@ -39,7 +39,7 @@ const CourseDetailsPage = () => {
         // Fetch instructor details
         let instructorData = null
         try {
-          instructorData = await fetch(`http://localhost:5005/api/user/catalog/instructors/${courseData.instructorId}`, {
+          instructorData = await fetch(`https://randaeldaba-001-site1.qtempurl.com/api/user/catalog/instructors/${courseData.instructorId}`, {
             headers: {
               'Content-Type': 'application/json'
             }
@@ -49,7 +49,7 @@ const CourseDetailsPage = () => {
         }
         let contentsData = []
         try {
-          contentsData = await fetch(`http://localhost:5005/api/user/catalog/courses/${courseData.id}/contents`, {
+          contentsData = await fetch(`https://randaeldaba-001-site1.qtempurl.com/api/user/catalog/courses/${courseData.id}/contents`, {
             headers: {
               'Content-Type': 'application/json'
             }
@@ -63,7 +63,7 @@ const CourseDetailsPage = () => {
           description: courseData.description,
           shortDescription: courseData.description?.substring(0, 100) + '...',
           price: courseData.price,
-          image: courseData.imageUrl ? `http://localhost:5005${courseData.imageUrl}` : 'https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=400&h=250&fit=crop',
+          image: courseData.imageUrl ? `https://randaeldaba-001-site1.qtempurl.com${courseData.imageUrl}` : 'https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=400&h=250&fit=crop',
           video: courseData.videoUrl || '',
           level: courseData.level,
           duration: courseData.durationHours,
@@ -215,9 +215,9 @@ const CourseDetailsPage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <nav className="text-sm text-gray-600">
             <Link to="/" className="hover:text-blue-600">Home</Link>
-            <span className="mx-2">></span>
+            <span className="mx-2">&gt;</span>
             <Link to="/courses" className="hover:text-blue-600">Courses</Link>
-            <span className="mx-2">></span>
+            <span className="mx-2">&gt;</span>
             <span className="text-gray-900">{course.title}</span>
           </nav>
                 </div>
@@ -309,7 +309,7 @@ const CourseDetailsPage = () => {
                   <div className="w-20 h-20 bg-gray-300 rounded-full flex items-center justify-center">
                     {instructor?.profileImageUrl ? (
                       <img 
-                        src={`http://localhost:5005${instructor.profileImageUrl}`} 
+                        src={`https://randaeldaba-001-site1.qtempurl.com${instructor.profileImageUrl}`} 
                         alt={instructor.fullName}
                         className="w-20 h-20 rounded-full object-cover"
                       />

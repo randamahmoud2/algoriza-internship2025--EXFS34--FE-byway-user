@@ -67,7 +67,7 @@ const HomePage = () => {
           title: course.title,
           description: course.description,
           price: course.price,
-          image: course.imageUrl ? `http://localhost:5005${course.imageUrl}` : 'https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=300&h=200&fit=crop',
+          image: course.imageUrl ? `https://randaeldaba-001-site1.qtempurl.com${course.imageUrl}` : 'https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=300&h=200&fit=crop',
           level: course.level,
           durationHours: course.durationHours,
           instructor: {
@@ -107,7 +107,7 @@ const HomePage = () => {
           rating: instructor.averageRating,
           studentsCount: instructor.totalEnrollments,
           avatar: instructor.profileImageUrl ? 
-            `http://localhost:5005${instructor.profileImageUrl}` : 
+            `https://randaeldaba-001-site1.qtempurl.com${instructor.profileImageUrl}` : 
             'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face'
         }))
         

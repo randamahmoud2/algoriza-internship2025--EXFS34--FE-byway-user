@@ -70,7 +70,7 @@ const CoursesPage = () => {
           description: course.description,
           shortDescription: course.description?.substring(0, 100) + '...',
           price: course.price,
-          image: course.imageUrl ? `http://localhost:5005${course.imageUrl}` : 'https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=400&h=250&fit=crop',
+          image: course.imageUrl ? `https://randaeldaba-001-site1.qtempurl.com${course.imageUrl}` : 'https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=400&h=250&fit=crop',
           video: course.videoUrl || '',
           level: course.level,
           duration: course.durationHours,
