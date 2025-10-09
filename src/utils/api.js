@@ -1,4 +1,4 @@
-const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:5005/api';
+const API_BASE = import.meta.env.VITE_API_BASE || 'https://randaeldaba-001-site1.qtempurl.com/api';
 
 export const setAuthToken = (token) => {
   if (token) {
@@ -18,7 +18,7 @@ const getHeaders = (isJson = true) => {
 
 export const authApi = {
   async login(email, password) {
-    const res = await fetch(`${API_BASE}/auth/login`, {
+    const res = await fetch(`${API_BASE}/Auth/login`, {
       method: 'POST',
       headers: getHeaders(),
       body: JSON.stringify({ email, password })
@@ -33,7 +33,7 @@ export const authApi = {
     return res.json()
   },
   async register(email, password) {
-    const res = await fetch(`${API_BASE}/auth/register`, {
+    const res = await fetch(`${API_BASE}/Auth/register`, {
       method: 'POST',
       headers: getHeaders(),
       body: JSON.stringify({ email: email, password: password })
@@ -67,7 +67,7 @@ export const catalogApi = {
     return res.json()
   },
   async getTopInstructors(count = 4) {
-    const res = await fetch(`${API_BASE}/dashboard/top-instructors?count=${count}`, { headers: getHeaders(false) })
+    const res = await fetch(`${API_BASE}/Dashboard/top-instructors?count=${count}`, { headers: getHeaders(false) })
     if (!res.ok) throw new Error('Failed to load instructors')
     return res.json()
   }
@@ -75,7 +75,7 @@ export const catalogApi = {
 
 export const adminApi = {
   async getCourses(params = {}) {
-    const url = new URL(`${API_BASE}/courses`)
+    const url = new URL(`${API_BASE}/Courses`)
     Object.entries(params).forEach(([k, v]) => {
       if (v !== undefined && v !== null && v !== '') url.searchParams.set(k, v)
     })
@@ -84,12 +84,12 @@ export const adminApi = {
     return res.json()
   },
   async getCourse(id) {
-    const res = await fetch(`${API_BASE}/courses/${id}`, { headers: getHeaders(false) })
+    const res = await fetch(`${API_BASE}/Courses/${id}`, { headers: getHeaders(false) })
     if (!res.ok) throw new Error('Course not found')
     return res.json()
   },
   async getCategories() {
-    const res = await fetch(`${API_BASE}/categories`, { headers: getHeaders(false) })
+    const res = await fetch(`${API_BASE}/Categories`, { headers: getHeaders(false) })
     if (!res.ok) throw new Error('Failed to load categories')
     return res.json()
   }
